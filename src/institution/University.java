@@ -12,7 +12,26 @@ public class University {
         this.name = name;
         this.students = students;
     }
-// заміняє студента на і-тому місці студентом, який приходить з вхідного параметра метода
+//    метод повертає середнє серед знань
+    public double AvarageKnowledge(){
+        double suma=0;
+        for (Student student : students) {
+
+            suma += student.getKnowledge().getLevel();
+        }
+        return suma/(students.size());
+
+    }
+
+    public ArrayList<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(ArrayList<Student> students) {
+        this.students = students;
+    }
+
+    // заміняє студента на і-тому місці студентом, який приходить з вхідного параметра метода
     public void setStudent(Student student, int i) {
        students.remove(i);
        students.add(i,student);

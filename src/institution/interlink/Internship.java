@@ -2,6 +2,7 @@ package institution.interlink;
 
 import Person.consciousness.Knowledge;
 import Person.Student;
+import institution.University;
 
 import java.util.ArrayList;
 
@@ -20,11 +21,12 @@ public class Internship {
     }
 
 
-///Метод для отримання студентів(із університету) на стажування, в яких знання 4 або 5
-    public ArrayList<Student> getStudents(ArrayList<Student> arrayList) {
-        for (int i = 0; i < arrayList.size(); i++) {
-            if (arrayList.get(i).getKnowledge().equals(new Knowledge(4)) || arrayList.get(i).getKnowledge().equals(new Knowledge(5)))
-                internshipList.add(arrayList.get(i));
+///Метод для отримання студентів(із університету) на стажування, в яких знання вищі середнього
+    public ArrayList<Student> getStudents(University university) {
+        for (int i = 0; i < university.getStudents().size(); i++) {
+            double avarageKnowledge = university.AvarageKnowledge();
+              if(university.getStudents().get(i).getKnowledge().getLevel()>= avarageKnowledge)
+                internshipList.add(university.getStudents().get(i));
         }
         return internshipList;
     }
