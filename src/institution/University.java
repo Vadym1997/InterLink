@@ -25,10 +25,10 @@ public class University {
 
     public void getStudents(University university) {
 
-                System.out.println("Звідки отримуються студенти?" +
-                        " 1 з програми." +
-                        " 2 з файлу." +
-                        " 3 з БД.");
+                System.out.println("Звідки ви хочете отримувати студентів?" );
+                System.out.println( " Введіть 1, щоб отримати студентів із програми;" +
+                        " 2 - з файлу;" +
+                        " 3 -  з БД.");
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
         switch (number) {
@@ -61,7 +61,6 @@ public class University {
         }
 
      }
-
 
     // заміняє студента на і-тому місці студентом, який приходить з вхідного параметра метода
     public void setStudent(Student student, int i) {
